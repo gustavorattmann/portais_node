@@ -24,29 +24,29 @@ export default class Index extends Component {
   constructor(){
     super();
     this.state = {
-                    cidade:{logo:'tp_imoveiscuritiba.gif'},
-                    menu:[],
-                    bairros:{itens:[],qtde:0},
-                    filtro:{
-                      quartos:[],
-                      vagas:[],
-                      tipos:[],
-                      tipo_negocio:['venda'],
-                      bairros:[],
-                      cidade:'',
-                      valorMin:[],
-                      valorMax:[],
-                      areaMin:[],
-                      areaMax:[],
-                      coluna:[],
-                    },
-                    imoveis:{itens:[],qtde:0},
-                    url:{},
-                    tipos: ImoveisTipos(),
-                    titulo:'Imóveis ',
-                    baseUrl:'',
-                    totalImoveis:''
-                  };
+      cidade:{logo:'tp_imoveiscuritiba.gif'},
+      menu:[],
+      bairros:{itens:[],qtde:0},
+      filtro:{
+        quartos:[],
+        vagas:[],
+        tipos:[],
+        tipo_negocio:['venda'],
+        bairros:[],
+        cidade:'',
+        valorMin:[],
+        valorMax:[],
+        areaMin:[],
+        areaMax:[],
+        coluna:[],
+      },
+      imoveis:{itens:[],qtde:0},
+      url:{},
+      tipos: ImoveisTipos(),
+      titulo:'Imóveis ',
+      baseUrl:'',
+      totalImoveis:''
+    };
   }
 
   shouldComponentUpdate(nextProps,nextState){
@@ -123,21 +123,18 @@ export default class Index extends Component {
     this.setState({titulo:titulo.retorno,baseUrl:titulo.retornoUrl});
   }
 
-
-
-
   render(){
     return (
       <Fragment>
-        <div className="container">
         <Menu logo={this.state.cidade.topo} menu={this.state.menu} cidadeLink={this.state.cidade.link} cidadeNome={this.state.cidade.nome}/>
-        <Filtro bairros={this.state.bairros.itens} tipos={this.state.tipos} filtro={this.state.filtro}/>
-        <Breadcrumbs filtro={this.state.filtro}/>
-        <h1>{this.state.titulo}</h1>
-        <h2>{this.state.totalImoveis} imóveis encontrados</h2>
-        <Imoveis {...this.state.imoveis} />
-        <Footer cidade={this.state.cidade}/>
+        <div className="container">
+          <Filtro bairros={this.state.bairros.itens} tipos={this.state.tipos} filtro={this.state.filtro}/>
+          <Breadcrumbs filtro={this.state.filtro}/>
+          <h1 className="fs-20 f-bold blue-text text-darken-4 mt-2 mb-0">{this.state.titulo}</h1>
+          <h2 className="fs-16 f-bold mt-0 mb-2">{this.state.totalImoveis} imóveis encontrados</h2>
+          <Imoveis {...this.state.imoveis} />
         </div>
+        <Footer cidade={this.state.cidade}/>
       </Fragment>
     )
   }
