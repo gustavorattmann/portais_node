@@ -23,6 +23,7 @@ class Breadcrumbs extends Component {
     const bread = FiltroUtil('breadcrumbs');
     this.setState({itens:bread})
   }
+  
   render(){
     return(
       <Fragment>
@@ -34,7 +35,6 @@ class Breadcrumbs extends Component {
           </div>
         </nav>
       </Fragment>
-
     )
   }
 }
