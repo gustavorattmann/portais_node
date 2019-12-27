@@ -1396,7 +1396,7 @@
  */
 /* Estilização da barra de navegação */
 .sidenav {
-  width: 80%;
+  width: auto;
 }
 
 @media (max-width: 500px) {
