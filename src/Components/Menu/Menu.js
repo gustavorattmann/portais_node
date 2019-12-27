@@ -31,11 +31,11 @@ class MenuDropdown extends Component {
               mode="inline"
               onOpenChange={this.onOpenChange}
               openKeys={this.state.openKeys}>
-              <SubMenu key={item.link} to={`imoveis-${item.link}-${this.props.cidadeLink}`} className="black-text text-darken-2" title={`${item.titulo} Imóveis em ${this.props.cidadeNome}`}> <i className="material-icons right black-text text-darken-2"></i>
+              <SubMenu key={item.link} to={`imoveis-${item.link}-${this.props.cidadeLink}`} className="blue-text text-darken-4" title={`${item.titulo} Imóveis em ${this.props.cidadeNome}`}> <i className="material-icons right blue-text text-darken-4"></i>
               {
               item.itens.map((sub) => {
                   return(
-                    <MenuItem key={item.link} className="black-text text-darken-2" title={`${item.titulo} ${sub.descricao} em ${this.props.cidadeNome}`}>
+                    <MenuItem key={item.link} className="blue-text text-darken-4" title={`${item.titulo} ${sub.descricao} em ${this.props.cidadeNome}`}>
                         <LinkWrapper to={`${sub.link}-${item.link}-${this.props.cidadeLink}`}>{sub.descricao}</LinkWrapper>
                     </MenuItem>
                     )
@@ -56,16 +56,16 @@ class MenuItens extends Component {
     let itens = this.props.menu.map((item) => {
         return (
             <li key={item.link}>
-              <LinkWrapper key={`${item.link}-a`} to="#" className=" black-text text-darken-2" data-target={`dropdown-${item.link}`}>{item.titulo} <i className="material-icons right black-text text-darken-2"></i></LinkWrapper>
+              <LinkWrapper key={`${item.link}-a`} to="#" className=" blue-text text-darken-4" data-target={`dropdown-${item.link}`}>{item.titulo} <i className="material-icons right blue-text text-darken-4"></i></LinkWrapper>
               <ul id={`dropdown-${item.link}`} className="">
                 <li>
-                  <LinkWrapper key={`int-${item.id}`} to={`imoveis-${item.link}-${this.props.cidadeLink}`} className="black-text text-darken-2">{`${item.titulo} Imóveis em ${this.props.cidadeNome}`} <i className="material-icons right black-text text-darken-2"></i></LinkWrapper>
+                  <LinkWrapper key={`int-${item.id}`} to={`imoveis-${item.link}-${this.props.cidadeLink}`} className="blue-text text-darken-4">{`${item.titulo} Imóveis em ${this.props.cidadeNome}`} <i className="material-icons right blue-text text-darken-4"></i></LinkWrapper>
                 </li>
                 {
                 item.itens.map((sub) => {
                   return(
                     <li key={sub.link}>
-                      <LinkWrapper key={sub.link} to={`${item.link}-${sub.link}-${this.props.cidadeLink}`} className="black-text text-darken-2" title={`${item.titulo} ${sub.descricao} em ${this.props.cidadeNome}`}>
+                      <LinkWrapper key={sub.link} to={`${item.link}-${sub.link}-${this.props.cidadeLink}`} className="blue-text text-darken-4" title={`${item.titulo} ${sub.descricao} em ${this.props.cidadeNome}`}>
                         {sub.descricao}
                       </LinkWrapper>
                     </li>
@@ -84,7 +84,7 @@ class MenuItens extends Component {
 class Menu extends Component {
 
 componentDidUpdate(nextProps,nextState){
-  var elem = document.querySelector(".sidenav");
+  var elem = document.querySelectorAll(".sidenav");
   this.campo = M.Sidenav.init(elem);
 }
 
@@ -107,7 +107,7 @@ componentDidUpdate(nextProps,nextState){
                       <MenuDropdown className="menu-desktop" menu={this.props.menu} cidadeLink={this.props.cidadeLink} key={`${this.props.cidadeLink}-menu`} cidadeNome={this.props.cidadeNome} mobile={false}/>
                     </li>
                     <li>
-                      <LinkWrapper to="#" className="black-text text-darken-2">Sobre</LinkWrapper>
+                      <LinkWrapper to="#" className="blue-text text-darken-4">Sobre</LinkWrapper>
                     </li>
                   </ul>
                 </div>
