@@ -18,31 +18,24 @@ class Header extends Component {
       left: false
     }
   }
-
-
-
-
+  
   return(
-        <header>
-          <AppBar position="static">
-            <Toolbar className="white black-text text-darken-2">
-              <IconButton className="" color="inherit" aria-label="menu" onClick={toggleDrawer('left', true)}>
-                <MenuIcon />
-              </IconButton>
-              <Img loader={<PreLoader/>} className="logo right" src={`https://admin.powempresas.com/portais/logos/${props.logo}`}/>
-              <Drawer open={state.left} onClose={toggleDrawer('left', false)}>
-                {sideList('left')}
-              </Drawer>
-              <Menu id="main-menu">
-                <MenuItem>Sobre</MenuItem>
-              </Menu>
-            </Toolbar>
-          </AppBar>
-
-        </header>
-      )
-
-
-
+    <header>
+      <AppBar position="static">
+        <Toolbar className="white blue-text text-darken-4">
+          <IconButton className="" color="inherit" aria-label="menu" onClick={toggleDrawer('left', true)}>
+            <MenuIcon />
+          </IconButton>
+          <Img loader={<PreLoader/>} className="logo right" src={`https://admin.powempresas.com/portais/logos/${props.logo}`}/>
+          <Drawer open={state.left} onClose={toggleDrawer('left', false)}>
+            {sideList('left')}
+          </Drawer>
+          <Menu id="main-menu">
+            <MenuItem>Sobre</MenuItem>
+          </Menu>
+        </Toolbar>
+      </AppBar>
+    </header>
+  )
 }
 export default Header;
