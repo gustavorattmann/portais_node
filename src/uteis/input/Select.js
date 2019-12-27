@@ -20,7 +20,8 @@ export default class Select extends Component {
   }
 
   componentDidUpdate(prevProps,prevState){
-    this.campo = M.FormSelect.init(this.selectInput);
+    var elem = document.querySelectorAll('select');
+    this.campo = M.FormSelect.init(elem);
   }
 
   render(){
